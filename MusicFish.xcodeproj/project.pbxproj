@@ -21,6 +21,7 @@
 		4894B05326E79662004BCDB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4894B05526E79662004BCDB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4894B05626E79662004BCDB6 /* MusicFish.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MusicFish.entitlements; sourceTree = "<group>"; };
+		4894B05C26E79766004BCDB6 /* SwiftScriptingBridge.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SwiftScriptingBridge.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +39,7 @@
 			isa = PBXGroup;
 			children = (
 				4894B04B26E7965F004BCDB6 /* MusicFish */,
+				4894B05E26E7977A004BCDB6 /* doc */,
 				4894B04A26E7965F004BCDB6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +63,14 @@
 				4894B05626E79662004BCDB6 /* MusicFish.entitlements */,
 			);
 			path = MusicFish;
+			sourceTree = "<group>";
+		};
+		4894B05E26E7977A004BCDB6 /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				4894B05C26E79766004BCDB6 /* SwiftScriptingBridge.md */,
+			);
+			path = doc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
