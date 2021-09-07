@@ -8,8 +8,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // MARK: - Control Panel
 
-        KeyboardShortcuts.onKeyUp(for: .playpause) {
+        KeyboardShortcuts.onKeyDown(for: .playpause) {
             MusicController.shared.playpause()
+            print(Log().string + "onKeyDown playpause")
         }
 
         // MARK: - Rating Panel
