@@ -678,7 +678,7 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="-100"/>
+            <point key="canvasLocation" x="75" y="-252"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -700,7 +700,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="75" y="92"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="QAg-x9-elg">
@@ -710,6 +710,7 @@
                         <tabViewItem label="Control" identifier="" image="playpause" catalog="system" id="b8H-oy-onS" userLabel="Control_TabViewItem"/>
                         <tabViewItem label="Rating" identifier="" image="heart" catalog="system" id="0df-4H-cdk" userLabel="Rating_TabViewItem"/>
                         <tabViewItem label="Track" image="music.note.list" catalog="system" id="xZb-0a-PBq" userLabel="Track_TabViewItem"/>
+                        <tabViewItem label="Preferences" image="gearshape" catalog="system" id="NNw-v1-zAp" userLabel="Preferences_TabViewItem"/>
                         <tabViewItem label="About" image="info" catalog="system" id="CaZ-hj-gI3" userLabel="About_TabViewItem"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="lFR-EZ-ftb">
@@ -725,12 +726,13 @@
                         <segue destination="eoF-79-cwy" kind="relationship" relationship="tabItems" id="1es-zx-LIS"/>
                         <segue destination="kwN-b3-ATK" kind="relationship" relationship="tabItems" id="jZe-aV-t8H"/>
                         <segue destination="eOH-ci-OOH" kind="relationship" relationship="tabItems" id="RR7-4F-PPB"/>
+                        <segue destination="pmp-Em-LkI" kind="relationship" relationship="tabItems" id="Fub-Mo-m4z"/>
                         <segue destination="dIn-Cv-FXD" kind="relationship" relationship="tabItems" id="YAi-6q-3Xw"/>
                     </connections>
                 </tabViewController>
                 <customObject id="1Zl-QU-tnS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="652"/>
+            <point key="canvasLocation" x="75" y="653"/>
         </scene>
         <!--Control-->
         <scene sceneID="gi6-jd-fbU">
@@ -838,10 +840,24 @@
                 </viewController>
                 <customObject id="cDF-k9-Ue9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="842" y="1144"/>
+            <point key="canvasLocation" x="853" y="811"/>
+        </scene>
+        <!--Preferences-->
+        <scene sceneID="LB9-G6-vra">
+            <objects>
+                <viewController title="Preferences" id="pmp-Em-LkI" sceneMemberID="viewController">
+                    <view key="view" id="jLa-WC-Srn">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="i4J-Rt-ZSx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="853" y="449"/>
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape" catalog="system" width="16" height="16"/>
         <image name="heart" catalog="system" width="16" height="14"/>
         <image name="info" catalog="system" width="9" height="12"/>
         <image name="music.note.list" catalog="system" width="16" height="15"/>
