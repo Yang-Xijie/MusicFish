@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,45 +674,177 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MusicFish" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="75" y="-100"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="MusicFish" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="500" height="309"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="500" height="309"/>
+                        <value key="maxSize" type="size" width="500" height="309"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="mOp-3I-RHH" kind="relationship" relationship="window.shadowedContentViewController" id="4YS-ZB-wX1"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <!--Tab View Controller-->
+        <scene sceneID="QAg-x9-elg">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <tabViewController selectedTabViewItemIndex="0" tabStyle="toolbar" id="mOp-3I-RHH" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem label="Control" identifier="" image="playpause" catalog="system" id="b8H-oy-onS" userLabel="Control_TabViewItem"/>
+                        <tabViewItem label="Rating" identifier="" image="heart" catalog="system" id="0df-4H-cdk" userLabel="Rating_TabViewItem"/>
+                        <tabViewItem label="Track" image="music.note.list" catalog="system" id="xZb-0a-PBq" userLabel="Track_TabViewItem"/>
+                        <tabViewItem label="About" image="info" catalog="system" id="CaZ-hj-gI3" userLabel="About_TabViewItem"/>
+                    </tabViewItems>
+                    <tabView key="tabView" type="noTabsNoBorder" id="lFR-EZ-ftb">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <connections>
+                            <outlet property="delegate" destination="mOp-3I-RHH" id="ffU-BD-oZl"/>
+                        </connections>
+                    </tabView>
+                    <connections>
+                        <outlet property="tabView" destination="lFR-EZ-ftb" id="73h-z1-g94"/>
+                        <segue destination="eoF-79-cwy" kind="relationship" relationship="tabItems" id="1es-zx-LIS"/>
+                        <segue destination="kwN-b3-ATK" kind="relationship" relationship="tabItems" id="jZe-aV-t8H"/>
+                        <segue destination="eOH-ci-OOH" kind="relationship" relationship="tabItems" id="RR7-4F-PPB"/>
+                        <segue destination="dIn-Cv-FXD" kind="relationship" relationship="tabItems" id="YAi-6q-3Xw"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="1Zl-QU-tnS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="652"/>
+        </scene>
+        <!--Control-->
+        <scene sceneID="gi6-jd-fbU">
+            <objects>
+                <viewController title="Control" id="eoF-79-cwy" sceneMemberID="viewController">
+                    <view key="view" id="8ux-ZW-rv2">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K1W-lG-Irp">
+                                <rect key="frame" x="188" y="142" width="74" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Control Tab" id="VwH-YZ-c06">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="K1W-lG-Irp" firstAttribute="centerY" secondItem="8ux-ZW-rv2" secondAttribute="centerY" id="1SW-gL-yHD"/>
+                            <constraint firstItem="K1W-lG-Irp" firstAttribute="centerX" secondItem="8ux-ZW-rv2" secondAttribute="centerX" id="kGY-7y-Fee"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="yH8-Zf-AZa" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="-580" y="1144"/>
+        </scene>
+        <!--Rating-->
+        <scene sceneID="IOf-97-vtI">
+            <objects>
+                <viewController title="Rating" id="kwN-b3-ATK" sceneMemberID="viewController">
+                    <view key="view" id="Pr7-X6-9ye">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KGM-My-44u">
+                                <rect key="frame" x="191" y="142" width="69" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Rating Tab" id="nXj-un-X9j">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="KGM-My-44u" firstAttribute="centerY" secondItem="Pr7-X6-9ye" secondAttribute="centerY" id="qeN-oc-gnv"/>
+                            <constraint firstItem="KGM-My-44u" firstAttribute="centerX" secondItem="Pr7-X6-9ye" secondAttribute="centerX" id="yqG-ED-Osi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="2yv-b0-ABu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-109" y="1144"/>
+        </scene>
+        <!--Track-->
+        <scene sceneID="Kh8-Ju-zVM">
+            <objects>
+                <viewController title="Track" id="eOH-ci-OOH" sceneMemberID="viewController">
+                    <view key="view" id="OCb-ZA-hPJ">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mlB-vy-prB">
+                                <rect key="frame" x="194" y="142" width="63" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Track Tab" id="ATJ-ow-MQM">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="mlB-vy-prB" firstAttribute="centerY" secondItem="OCb-ZA-hPJ" secondAttribute="centerY" id="Haf-bw-j8Y"/>
+                            <constraint firstItem="mlB-vy-prB" firstAttribute="centerX" secondItem="OCb-ZA-hPJ" secondAttribute="centerX" id="MT2-uh-ACn"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="ESQ-Y5-REC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="360" y="1144"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="4aN-Kc-mxU">
+            <objects>
+                <viewController title="About" id="dIn-Cv-FXD" sceneMemberID="viewController">
+                    <view key="view" id="TYF-Z0-okl">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sK1-3m-XIE">
+                                <rect key="frame" x="192" y="142" width="66" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="About Tab" id="otQ-AH-AAL">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="sK1-3m-XIE" firstAttribute="centerY" secondItem="TYF-Z0-okl" secondAttribute="centerY" id="7B8-Gg-2Jh"/>
+                            <constraint firstItem="sK1-3m-XIE" firstAttribute="centerX" secondItem="TYF-Z0-okl" secondAttribute="centerX" id="mYo-16-V54"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="cDF-k9-Ue9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="842" y="1144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="16" height="14"/>
+        <image name="info" catalog="system" width="9" height="12"/>
+        <image name="music.note.list" catalog="system" width="16" height="15"/>
+        <image name="playpause" catalog="system" width="20" height="13"/>
+    </resources>
 </document>
