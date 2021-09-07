@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		4894B06026E79824004BCDB6 /* MusicScriptingBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4894B05F26E79824004BCDB6 /* MusicScriptingBridge.swift */; };
 		4894B06226E79834004BCDB6 /* MusicScripting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4894B06126E79834004BCDB6 /* MusicScripting.swift */; };
 		4894B06526E79922004BCDB6 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4894B06426E79922004BCDB6 /* MusicController.swift */; };
+		48C944CA26E7AC7E004A01E0 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 48C944C926E7AC7E004A01E0 /* KeyboardShortcuts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48C944CA26E7AC7E004A01E0 /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +108,9 @@
 			dependencies = (
 			);
 			name = MusicFish;
+			packageProductDependencies = (
+				48C944C926E7AC7E004A01E0 /* KeyboardShortcuts */,
+			);
 			productName = MusicFish;
 			productReference = 4894B04926E7965F004BCDB6 /* MusicFish.app */;
 			productType = "com.apple.product-type.application";
@@ -133,6 +138,9 @@
 				Base,
 			);
 			mainGroup = 4894B04026E7965F004BCDB6;
+			packageReferences = (
+				48C944C826E7AC7E004A01E0 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+			);
 			productRefGroup = 4894B04A26E7965F004BCDB6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -360,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		48C944C826E7AC7E004A01E0 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		48C944C926E7AC7E004A01E0 /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48C944C826E7AC7E004A01E0 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4894B04126E7965F004BCDB6 /* Project object */;
 }
