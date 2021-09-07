@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		4894B04D26E7965F004BCDB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4894B04C26E7965F004BCDB6 /* AppDelegate.swift */; };
-		4894B04F26E7965F004BCDB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4894B04E26E7965F004BCDB6 /* ViewController.swift */; };
 		4894B05126E79662004BCDB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4894B05026E79662004BCDB6 /* Assets.xcassets */; };
 		4894B05426E79662004BCDB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4894B05226E79662004BCDB6 /* Main.storyboard */; };
 		4894B06026E79824004BCDB6 /* MusicScriptingBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4894B05F26E79824004BCDB6 /* MusicScriptingBridge.swift */; };
 		4894B06226E79834004BCDB6 /* MusicScripting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4894B06126E79834004BCDB6 /* MusicScripting.swift */; };
 		4894B06526E79922004BCDB6 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4894B06426E79922004BCDB6 /* MusicController.swift */; };
 		48C944CA26E7AC7E004A01E0 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 48C944C926E7AC7E004A01E0 /* KeyboardShortcuts */; };
+		48C944D126E7B318004A01E0 /* KeyboardShortcuts+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C944D026E7B318004A01E0 /* KeyboardShortcuts+.swift */; };
+		48C944D326E7B45D004A01E0 /* ControlPanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C944D226E7B45D004A01E0 /* ControlPanelVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4894B04926E7965F004BCDB6 /* MusicFish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicFish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4894B04C26E7965F004BCDB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4894B04E26E7965F004BCDB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4894B05026E79662004BCDB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4894B05326E79662004BCDB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4894B05526E79662004BCDB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -30,6 +30,8 @@
 		4894B06126E79834004BCDB6 /* MusicScripting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicScripting.swift; sourceTree = "<group>"; };
 		4894B06426E79922004BCDB6 /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
 		48C944CB26E7ACE8004A01E0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		48C944D026E7B318004A01E0 /* KeyboardShortcuts+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardShortcuts+.swift"; sourceTree = "<group>"; };
+		48C944D226E7B45D004A01E0 /* ControlPanelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanelVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +67,8 @@
 		4894B04B26E7965F004BCDB6 /* MusicFish */ = {
 			isa = PBXGroup;
 			children = (
-				4894B04C26E7965F004BCDB6 /* AppDelegate.swift */,
-				4894B04E26E7965F004BCDB6 /* ViewController.swift */,
-				4894B05226E79662004BCDB6 /* Main.storyboard */,
+				48C944D426E7B46C004A01E0 /* APP */,
+				48C944D026E7B318004A01E0 /* KeyboardShortcuts+.swift */,
 				4894B06326E79853004BCDB6 /* ScriptingBridge */,
 				4894B05026E79662004BCDB6 /* Assets.xcassets */,
 				4894B05526E79662004BCDB6 /* Info.plist */,
@@ -92,6 +93,16 @@
 				4894B06126E79834004BCDB6 /* MusicScripting.swift */,
 			);
 			path = ScriptingBridge;
+			sourceTree = "<group>";
+		};
+		48C944D426E7B46C004A01E0 /* APP */ = {
+			isa = PBXGroup;
+			children = (
+				4894B04C26E7965F004BCDB6 /* AppDelegate.swift */,
+				48C944D226E7B45D004A01E0 /* ControlPanelVC.swift */,
+				4894B05226E79662004BCDB6 /* Main.storyboard */,
+			);
+			path = APP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,9 +182,10 @@
 			files = (
 				4894B06026E79824004BCDB6 /* MusicScriptingBridge.swift in Sources */,
 				4894B06526E79922004BCDB6 /* MusicController.swift in Sources */,
-				4894B04F26E7965F004BCDB6 /* ViewController.swift in Sources */,
+				48C944D126E7B318004A01E0 /* KeyboardShortcuts+.swift in Sources */,
 				4894B04D26E7965F004BCDB6 /* AppDelegate.swift in Sources */,
 				4894B06226E79834004BCDB6 /* MusicScripting.swift in Sources */,
+				48C944D326E7B45D004A01E0 /* ControlPanelVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
