@@ -55,8 +55,8 @@
 			children = (
 				4894B04C26E7965F004BCDB6 /* AppDelegate.swift */,
 				4894B04E26E7965F004BCDB6 /* ViewController.swift */,
-				4894B05026E79662004BCDB6 /* Assets.xcassets */,
 				4894B05226E79662004BCDB6 /* Main.storyboard */,
+				4894B05026E79662004BCDB6 /* Assets.xcassets */,
 				4894B05526E79662004BCDB6 /* Info.plist */,
 				4894B05626E79662004BCDB6 /* MusicFish.entitlements */,
 			);
