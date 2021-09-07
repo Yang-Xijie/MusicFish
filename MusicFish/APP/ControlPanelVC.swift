@@ -8,7 +8,7 @@ class ControlPanelVC: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        
         let recorder = KeyboardShortcuts.RecorderCocoa(for: .playpause)
         playpauseShortcut.addSubview(recorder)
     }

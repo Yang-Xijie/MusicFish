@@ -68,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				48C944D426E7B46C004A01E0 /* APP */,
+				4894B06426E79922004BCDB6 /* MusicController.swift */,
 				48C944D026E7B318004A01E0 /* KeyboardShortcuts+.swift */,
 				4894B06326E79853004BCDB6 /* ScriptingBridge */,
 				4894B05026E79662004BCDB6 /* Assets.xcassets */,
@@ -88,7 +89,6 @@
 		4894B06326E79853004BCDB6 /* ScriptingBridge */ = {
 			isa = PBXGroup;
 			children = (
-				4894B06426E79922004BCDB6 /* MusicController.swift */,
 				4894B05F26E79824004BCDB6 /* MusicScriptingBridge.swift */,
 				4894B06126E79834004BCDB6 /* MusicScripting.swift */,
 			);

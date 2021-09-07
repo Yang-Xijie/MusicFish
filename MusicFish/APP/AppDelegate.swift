@@ -6,15 +6,16 @@ import KeyboardShortcuts
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        // MARK: - Control Panel
 
         KeyboardShortcuts.onKeyUp(for: .playpause) {
-            print("keypress")
-            MusicController.shared.playPause()
+            MusicController.shared.playpause()
         }
+
+        // MARK: - Rating Panel
+
+        // MARK: - Track Panel
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
+    func applicationWillTerminate(_ aNotification: Notification) {}
 }
