@@ -11,6 +11,10 @@ class MusicController {
     init() {
         MusicApplication = SBApplication(bundleIdentifier: "com.apple.Music")!
     }
+
+    var currentTrack:MusicTrack? {
+        MusicApplication.currentTrack
+    }
     
     func playpause() {
         // toggle the playing/paused state of the current track
