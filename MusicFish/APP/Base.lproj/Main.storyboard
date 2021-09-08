@@ -742,26 +742,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K1W-lG-Irp">
-                                <rect key="frame" x="188" y="142" width="74" height="16"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K1W-lG-Irp">
+                                <rect key="frame" x="295" y="219" width="74" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Control Tab" id="VwH-YZ-c06">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Icl-ZR-dEH">
-                                <rect key="frame" x="290" y="166" width="115" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </customView>
+                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FEe-mX-PwD">
+                                <rect key="frame" x="22" y="139" width="406" height="22"/>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="F7S-Bw-Ukf" userLabel="previousTrack Shortcut">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="biw-dY-T0v"/>
+                                            <constraint firstAttribute="height" constant="22" id="ve8-Z2-A5p"/>
+                                        </constraints>
+                                    </customView>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Icl-ZR-dEH" userLabel="playpause Shortcut">
+                                        <rect key="frame" x="138" y="0.0" width="130" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="YoO-Vc-VFv"/>
+                                            <constraint firstAttribute="height" constant="22" id="lXw-6x-Fhv"/>
+                                        </constraints>
+                                    </customView>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Pih-3x-GVt" userLabel="nextTrack shortcut">
+                                        <rect key="frame" x="276" y="0.0" width="130" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="IJR-lp-uZf"/>
+                                            <constraint firstAttribute="height" constant="22" id="YdI-3r-w5P"/>
+                                        </constraints>
+                                    </customView>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="K1W-lG-Irp" firstAttribute="centerY" secondItem="8ux-ZW-rv2" secondAttribute="centerY" id="1SW-gL-yHD"/>
+                            <constraint firstItem="FEe-mX-PwD" firstAttribute="centerY" secondItem="8ux-ZW-rv2" secondAttribute="centerY" id="DJa-2T-gHh"/>
+                            <constraint firstItem="FEe-mX-PwD" firstAttribute="centerX" secondItem="8ux-ZW-rv2" secondAttribute="centerX" id="Dd6-Ol-z5b"/>
                             <constraint firstItem="K1W-lG-Irp" firstAttribute="centerX" secondItem="8ux-ZW-rv2" secondAttribute="centerX" id="kGY-7y-Fee"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nextTrackShortcut" destination="Pih-3x-GVt" id="Iea-FF-QtY"/>
                         <outlet property="playpauseShortcut" destination="Icl-ZR-dEH" id="8Ru-lN-s7w"/>
+                        <outlet property="previousTrackShortcut" destination="F7S-Bw-Ukf" id="kFU-td-aRp"/>
                     </connections>
                 </viewController>
                 <customObject id="yH8-Zf-AZa" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

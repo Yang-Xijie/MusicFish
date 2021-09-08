@@ -10,7 +10,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         KeyboardShortcuts.onKeyDown(for: .playpause) {
             MusicController.shared.playpause()
-            print(Log().string + "onKeyDown playpause")
+        }
+
+        KeyboardShortcuts.onKeyDown(for: .nextTrack) {
+            MusicController.shared.nextTrack()
+            print(Log().string + "onKeyDown nextTrack")
+        }
+
+        KeyboardShortcuts.onKeyDown(for: .previousTrack) {
+            MusicController.shared.previousTrack()
         }
 
         // MARK: - Rating Panel
