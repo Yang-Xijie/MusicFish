@@ -150,18 +150,6 @@ class MusicController {
         {
             let originalLoveState: TrackLoveState = trackLoveState!
             
-            switch newLoveState {
-            case .loved:
-                currentTrack.setDisliked?(false)
-                currentTrack.setLoved?(true)
-            case .disliked:
-                currentTrack.setLoved?(false)
-                currentTrack.setDisliked?(true)
-            case .noEvaluation:
-                currentTrack.setLoved?(false)
-                currentTrack.setDisliked?(false)
-            }
-            
             let title = "\(originalLoveState.rawValue) 􀰑 \(newLoveState.rawValue) \(trackName)"
             let subtitle: String
             if trackArtist != "", trackAlbum != "" {
@@ -176,12 +164,26 @@ class MusicController {
                 }
             }
             
+            // push our notification first
             if let trackCover = Self.getCover(mp3path: mp3url) {
                 // with cover
                 PushNotificationWithNSImage(title: title, subtitle: subtitle, nsimage: trackCover)
             } else {
                 // no cover
                 PushNotification(title: title, subtitle: subtitle)
+            }
+            
+            switch newLoveState {
+            case .loved:
+                currentTrack.setDisliked?(false)
+                currentTrack.setLoved?(true)
+            case .disliked:
+                currentTrack.setLoved?(false)
+                currentTrack.setDisliked?(true)
+                MusicApplication.nextTrack() // push notification of Music.app
+            case .noEvaluation:
+                currentTrack.setLoved?(false)
+                currentTrack.setDisliked?(false)
             }
         } else {
             print(Log().error + "no currentTrack")
