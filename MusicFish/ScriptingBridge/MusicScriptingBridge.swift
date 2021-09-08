@@ -300,6 +300,7 @@ extension SBObject: MusicEQPreset {}
     @objc optional var specialKind: MusicESpK { get } // special playlist kind
     @objc optional var time: String { get } // the length of all tracks in MM:SS format
     @objc optional var visible: Bool { get } // is this playlist visible in the Source list?
+    
     @objc optional func moveTo(_ to: SBObject!) // Move playlist(s) to a new location
     @objc optional func searchFor(_ for_: String!, only: MusicESrA) -> MusicTrack // search a playlist for tracks matching the search string. Identical to entering search text in the Search field.
     @objc optional func setObjectDescription(_ objectDescription: String!) // the description of the playlist
@@ -437,6 +438,7 @@ extension SBObject: MusicSubscriptionPlaylist {}
     @objc optional var volumeAdjustment: Int { get } // relative volume adjustment of the track (-100% to 100%)
     @objc optional var work: String { get } // the work name of the track
     @objc optional var year: Int { get } // the year the track was recorded/released
+    
     @objc optional func setAlbum(_ album: String!) // the album name of the track
     @objc optional func setAlbumArtist(_ albumArtist: String!) // the album artist of the track
     @objc optional func setAlbumDisliked(_ albumDisliked: Bool) // is the album for this track disliked?

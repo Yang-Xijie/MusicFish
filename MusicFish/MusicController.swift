@@ -15,6 +15,16 @@ class MusicController {
     func playpause() {
         // toggle the playing/paused state of the current track
         MusicApplication.playpause()
+        
+        if let currentTrack = MusicApplication.currentTrack,
+           let trackName = currentTrack.name?.description,
+           let trackArtist = currentTrack.artist?.description,
+           let trackAlbum = currentTrack.album?.description
+        {
+            PushNotification(title: trackName, subtitle: "\(trackArtist) - \(trackAlbum)")
+        } else {
+            print(Log().error + "no currentTrack")
+        }
     }
     
     func nextTrack() {
