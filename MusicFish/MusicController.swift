@@ -26,7 +26,12 @@ class MusicController {
         MusicApplication.playerState
     }
     
-    // MARK: - manipulation
+    /// the sound output volume (0 = minimum, 100 = maximum)
+    var soundVolume: Int {
+        MusicApplication.soundVolume
+    }
+    
+    // MARK: - manipulation Control
     
     // toggle the playing/paused state of the current track
     func playpause() {
@@ -59,7 +64,7 @@ class MusicController {
             if let trackCover = Self.getCover(mp3path: mp3url) {
                 // with cover
                 PushNotificationWithNSImage(title: "\(operationIcon) \(trackName)", subtitle: "\(trackArtist) - \(trackAlbum)", nsimage: trackCover)
-                
+                // FIXME: some track has no artist and album
             } else {
                 // no cover
                 PushNotification(title: "\(operationIcon) \(trackName)", subtitle: "\(trackArtist) - \(trackAlbum)", body: operationName)
@@ -69,14 +74,24 @@ class MusicController {
         }
     }
     
+    /// advance to the next track in the current playlist
     func nextTrack() {
-        // advance to the next track in the current playlist
         MusicApplication.nextTrack()
     }
     
+    /// return to the previous track in the current playlist
     func previousTrack() {
-        // return to the previous track in the current playlist
         MusicApplication.previousTrack()
+    }
+    
+    func volumeUp() {
+        let newVolume: Int = ((soundVolume + 5) > 100) ? 100 : (soundVolume + 5)
+        MusicApplication.setSoundVolume(newVolume)
+    }
+    
+    func volumeDown() {
+        let newVolume: Int = (soundVolume - 5 < 0) ? 0 : (soundVolume - 5)
+        MusicApplication.setSoundVolume(newVolume)
     }
     
     // MARK: - private func

@@ -83,8 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				4894B06426E79922004BCDB6 /* MusicController.swift */,
-				48C944D426E7B46C004A01E0 /* APP */,
 				48C944D026E7B318004A01E0 /* KeyboardShortcuts+.swift */,
+				48C944D426E7B46C004A01E0 /* APP */,
 				488B25DB26E8DB2100B8130B /* Notication */,
 				4894B06326E79853004BCDB6 /* ScriptingBridge */,
 				48C944D726E7BA13004A01E0 /* Assistant */,

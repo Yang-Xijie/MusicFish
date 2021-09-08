@@ -937,6 +937,8 @@
                         <outlet property="nextTrackShortcut" destination="Pih-3x-GVt" id="Iea-FF-QtY"/>
                         <outlet property="playpauseShortcut" destination="Icl-ZR-dEH" id="8Ru-lN-s7w"/>
                         <outlet property="previousTrackShortcut" destination="F7S-Bw-Ukf" id="kFU-td-aRp"/>
+                        <outlet property="volumeDownShortcut" destination="o0Y-Zi-cmZ" id="Gwu-L2-48B"/>
+                        <outlet property="volumeUpShortcut" destination="KDI-66-vdl" id="RTa-Mu-j1i"/>
                     </connections>
                 </viewController>
                 <customObject id="yH8-Zf-AZa" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

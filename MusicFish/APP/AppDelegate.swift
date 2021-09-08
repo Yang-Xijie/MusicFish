@@ -15,16 +15,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // MARK: - Control Panel
 
-        KeyboardShortcuts.onKeyDown(for: .playpause) {
-            MusicController.shared.playpause()
-        }
-
         KeyboardShortcuts.onKeyDown(for: .nextTrack) {
             MusicController.shared.nextTrack()
         }
-
+        KeyboardShortcuts.onKeyDown(for: .playpause) {
+            MusicController.shared.playpause()
+        }
         KeyboardShortcuts.onKeyDown(for: .previousTrack) {
             MusicController.shared.previousTrack()
+        }
+
+        KeyboardShortcuts.onKeyDown(for: .volumeUp) {
+            MusicController.shared.volumeUp()
+        }
+        KeyboardShortcuts.onKeyDown(for: .volumeDown) {
+            MusicController.shared.volumeDown()
         }
 
         // MARK: - Rating Panel

@@ -6,9 +6,12 @@ import KeyboardShortcuts
 
 class ControlPanelVC: NSViewController {
     // Custom View in Storyboard
-    @IBOutlet var playpauseShortcut: NSView!
     @IBOutlet var previousTrackShortcut: NSView!
+    @IBOutlet var playpauseShortcut: NSView!
     @IBOutlet var nextTrackShortcut: NSView!
+
+    @IBOutlet var volumeDownShortcut: NSView!
+    @IBOutlet var volumeUpShortcut: NSView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,5 +27,13 @@ class ControlPanelVC: NSViewController {
         let nextTrackRecoder = KeyboardShortcuts.RecorderCocoa(for: .nextTrack)
         nextTrackShortcut.addSubview(nextTrackRecoder)
         nextTrackShortcut.setFrameSize(nextTrackRecoder.fittingSize)
+
+        let volumeUpRecoder = KeyboardShortcuts.RecorderCocoa(for: .volumeUp)
+        volumeUpShortcut.addSubview(volumeUpRecoder)
+        volumeUpShortcut.setFrameSize(volumeUpRecoder.fittingSize)
+
+        let volumeDownRecoder = KeyboardShortcuts.RecorderCocoa(for: .volumeDown)
+        volumeDownShortcut.addSubview(volumeDownRecoder)
+        volumeDownShortcut.setFrameSize(volumeDownRecoder.fittingSize)
     }
 }
