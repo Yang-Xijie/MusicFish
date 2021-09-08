@@ -65,6 +65,10 @@ struct Log: CustomStringConvertible {
         description
     }
 
+    public var debug: String {
+        "[[DEBUG]] " + description
+    }
+
     public var error: String {
         "[[ERROR]] " + description
     }

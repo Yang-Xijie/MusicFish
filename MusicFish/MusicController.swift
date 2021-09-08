@@ -16,16 +16,38 @@ class MusicController {
     
     // MARK: - get
 
+    /// the current targeted track
     var currentTrack: MusicTrack? {
         MusicApplication.currentTrack
     }
     
+    /// is the player stopped, paused, or playing?
+    var playerState: MusicEPlS {
+        MusicApplication.playerState
+    }
+    
     // MARK: - manipulation
     
+    // toggle the playing/paused state of the current track
     func playpause() {
-        let operationName = "playpause"
-        // toggle the playing/paused state of the current track
         MusicApplication.playpause()
+        
+        let operationName: String
+        let operationIcon: String
+        switch playerState {
+        case .stopped:
+            operationName = "stopped"
+            operationIcon = "􀛶"
+        case .paused:
+            operationName = "paused"
+            operationIcon = "􀊅"
+        case .playing:
+            operationName = "playing"
+            operationIcon = "􀊃"
+        default:
+            operationName = "playpause"
+            operationIcon = "􀊇"
+        }
         
         if let currentTrack = MusicApplication.currentTrack,
            let trackName = currentTrack.name?.description,
@@ -35,10 +57,11 @@ class MusicController {
         {
             if let trackCover = Self.getCover(mp3path: mp3url) {
                 // with cover
-                PushNotificationWithNSImage(title: trackName, subtitle: "\(trackArtist) - \(trackAlbum)", body: operationName, nsimage: trackCover)
+                PushNotificationWithNSImage(title: "\(operationIcon) \(trackName)", subtitle: "\(trackArtist) - \(trackAlbum)", nsimage: trackCover)
+                
             } else {
                 // no cover
-                PushNotification(title: trackName, subtitle: "\(trackArtist) - \(trackAlbum)", body: operationName)
+                PushNotification(title: "\(operationIcon) \(trackName)", subtitle: "\(trackArtist) - \(trackAlbum)", body: operationName)
             }
         } else {
             print(Log().error + "no currentTrack")
