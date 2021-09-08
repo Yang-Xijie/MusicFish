@@ -23,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		488B25D926E8DAAC00B8130B /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
+		488B25DC26E8EB2800B8130B /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		4892129526E8975200A82340 /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
 		4894B04926E7965F004BCDB6 /* MusicFish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicFish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4894B04C26E7965F004BCDB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				4894B05C26E79766004BCDB6 /* SwiftScriptingBridge.md */,
+				488B25DC26E8EB2800B8130B /* TODO.md */,
 			);
 			path = doc;
 			sourceTree = "<group>";
