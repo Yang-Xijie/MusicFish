@@ -742,38 +742,102 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K1W-lG-Irp">
-                                <rect key="frame" x="295" y="219" width="74" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Control Tab" id="VwH-YZ-c06">
-                                    <font key="font" usesAppearanceFont="YES"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FEe-mX-PwD">
-                                <rect key="frame" x="22" y="139" width="406" height="22"/>
+                                <rect key="frame" x="22" y="127" width="406" height="46"/>
                                 <subviews>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="F7S-Bw-Ukf" userLabel="previousTrack Shortcut">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="22"/>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gnP-zI-MmL">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="46"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pl4-Nc-N4o">
+                                                <rect key="frame" x="-2" y="30" width="134" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="􀊉" id="xYo-Mz-FyY">
+                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="F7S-Bw-Ukf" userLabel="previousTrack Shortcut">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="130" id="biw-dY-T0v"/>
+                                                    <constraint firstAttribute="height" constant="22" id="ve8-Z2-A5p"/>
+                                                </constraints>
+                                            </customView>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="130" id="biw-dY-T0v"/>
-                                            <constraint firstAttribute="height" constant="22" id="ve8-Z2-A5p"/>
+                                            <constraint firstItem="Pl4-Nc-N4o" firstAttribute="centerX" secondItem="gnP-zI-MmL" secondAttribute="centerX" id="uGT-Wo-Dcg"/>
                                         </constraints>
-                                    </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Icl-ZR-dEH" userLabel="playpause Shortcut">
-                                        <rect key="frame" x="138" y="0.0" width="130" height="22"/>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c1H-mA-t6m">
+                                        <rect key="frame" x="138" y="0.0" width="130" height="46"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rYc-zf-HMJ">
+                                                <rect key="frame" x="-2" y="30" width="134" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="􀊇" id="DJC-uJ-jxK">
+                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Icl-ZR-dEH" userLabel="playpause Shortcut">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="130" id="YoO-Vc-VFv"/>
+                                                    <constraint firstAttribute="height" constant="22" id="lXw-6x-Fhv"/>
+                                                </constraints>
+                                            </customView>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="130" id="YoO-Vc-VFv"/>
-                                            <constraint firstAttribute="height" constant="22" id="lXw-6x-Fhv"/>
+                                            <constraint firstItem="rYc-zf-HMJ" firstAttribute="centerX" secondItem="c1H-mA-t6m" secondAttribute="centerX" id="aBr-x5-0t1"/>
                                         </constraints>
-                                    </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Pih-3x-GVt" userLabel="nextTrack shortcut">
-                                        <rect key="frame" x="276" y="0.0" width="130" height="22"/>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xxj-xd-kE0">
+                                        <rect key="frame" x="276" y="0.0" width="130" height="46"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kLD-Gm-lXb">
+                                                <rect key="frame" x="-2" y="30" width="134" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="􀊋" id="qnh-Bk-hkS">
+                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Pih-3x-GVt" userLabel="nextTrack shortcut">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="130" id="IJR-lp-uZf"/>
+                                                    <constraint firstAttribute="height" constant="22" id="YdI-3r-w5P"/>
+                                                </constraints>
+                                            </customView>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="130" id="IJR-lp-uZf"/>
-                                            <constraint firstAttribute="height" constant="22" id="YdI-3r-w5P"/>
+                                            <constraint firstItem="kLD-Gm-lXb" firstAttribute="centerX" secondItem="xxj-xd-kE0" secondAttribute="centerX" id="aaA-eD-NA0"/>
                                         </constraints>
-                                    </customView>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
                                 </subviews>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
@@ -788,10 +852,8 @@
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="K1W-lG-Irp" firstAttribute="centerY" secondItem="8ux-ZW-rv2" secondAttribute="centerY" id="1SW-gL-yHD"/>
                             <constraint firstItem="FEe-mX-PwD" firstAttribute="centerY" secondItem="8ux-ZW-rv2" secondAttribute="centerY" id="DJa-2T-gHh"/>
                             <constraint firstItem="FEe-mX-PwD" firstAttribute="centerX" secondItem="8ux-ZW-rv2" secondAttribute="centerX" id="Dd6-Ol-z5b"/>
-                            <constraint firstItem="K1W-lG-Irp" firstAttribute="centerX" secondItem="8ux-ZW-rv2" secondAttribute="centerX" id="kGY-7y-Fee"/>
                         </constraints>
                     </view>
                     <connections>

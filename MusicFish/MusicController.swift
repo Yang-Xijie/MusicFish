@@ -30,6 +30,7 @@ class MusicController {
     
     // toggle the playing/paused state of the current track
     func playpause() {
+        // TODO: consider when music is not activate: use NSRunningApplication to start Music.app
         MusicApplication.playpause()
         
         let operationName: String
