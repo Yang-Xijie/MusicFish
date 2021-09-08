@@ -31,6 +31,26 @@ class MusicController {
         MusicApplication.soundVolume
     }
     
+    /// nil if no loveState
+    var loveState: TrackLoveState? {
+        if let track = currentTrack {
+            if track.loved == true {
+                return .loved
+            } else if track.disliked == true {
+                return .disliked
+            } else {
+                return .noEvaluation
+            }
+        }
+        return nil
+    }
+
+    enum TrackLoveState: String {
+        case noEvaluation = "􀊴"
+        case loved = "􀊵"
+        case disliked = "􀊷"
+    }
+
     // MARK: - manipulation Control
     
     // toggle the playing/paused state of the current track
@@ -117,6 +137,55 @@ class MusicController {
         let volumeString: String = "􀊤 \(newVolume)%"
         
         PushNotification(title: volumeString)
+    }
+    
+    // MARK: - manipulation Rating
+    
+    func setLoveState(to newLoveState: TrackLoveState) {
+        if let currentTrack = MusicApplication.currentTrack,
+           let trackName = currentTrack.name?.description,
+           let trackArtist = currentTrack.artist?.description,
+           let trackAlbum = currentTrack.album?.description,
+           let mp3url = (currentTrack as! MusicFileTrack).location
+        {
+            let originalLoveState: TrackLoveState = loveState!
+            
+            switch newLoveState {
+            case .loved:
+                currentTrack.setDisliked?(false)
+                currentTrack.setLoved?(true)
+            case .disliked:
+                currentTrack.setLoved?(false)
+                currentTrack.setDisliked?(true)
+            case .noEvaluation:
+                currentTrack.setLoved?(false)
+                currentTrack.setDisliked?(false)
+            }
+            
+            let title = "\(originalLoveState.rawValue) 􀰑 \(newLoveState.rawValue) \(trackName)"
+            let subtitle: String
+            if trackArtist != "", trackAlbum != "" {
+                subtitle = "\(trackArtist) - \(trackAlbum)"
+            } else if trackArtist == "", trackAlbum == "" {
+                subtitle = ""
+            } else {
+                if trackArtist != "" {
+                    subtitle = trackArtist
+                } else {
+                    subtitle = trackAlbum
+                }
+            }
+            
+            if let trackCover = Self.getCover(mp3path: mp3url) {
+                // with cover
+                PushNotificationWithNSImage(title: title, subtitle: subtitle, nsimage: trackCover)
+            } else {
+                // no cover
+                PushNotification(title: title, subtitle: subtitle)
+            }
+        } else {
+            print(Log().error + "no currentTrack")
+        }
     }
     
     // MARK: - private func

@@ -34,6 +34,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // MARK: - Rating Panel
 
+        KeyboardShortcuts.onKeyDown(for: .love) {
+            MusicController.shared.setLoveState(to: .loved)
+        }
+        KeyboardShortcuts.onKeyDown(for: .dislike) {
+            MusicController.shared.setLoveState(to: .disliked)
+        }
+        KeyboardShortcuts.onKeyDown(for: .noEvaluation) {
+            MusicController.shared.setLoveState(to: .noEvaluation)
+        }
+
         // MARK: - Track Panel
     }
 
