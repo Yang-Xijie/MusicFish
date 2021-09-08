@@ -786,25 +786,6 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YYZ-kG-T7b">
-                                <rect key="frame" x="150" y="208" width="75" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="e1X-Zu-iNx">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="ButtonClick:" target="eoF-79-cwy" id="9bd-j1-P7M"/>
-                                </connections>
-                            </button>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7nP-CP-S6i">
-                                <rect key="frame" x="11" y="198" width="99" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="PfE-o6-dtk"/>
-                                <connections>
-                                    <action selector="ButtonClick:" target="eoF-79-cwy" id="zxs-vS-hfg"/>
-                                </connections>
-                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="K1W-lG-Irp" firstAttribute="centerY" secondItem="8ux-ZW-rv2" secondAttribute="centerY" id="1SW-gL-yHD"/>
@@ -814,7 +795,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="TestImageView" destination="7nP-CP-S6i" id="J2g-07-1Fm"/>
                         <outlet property="nextTrackShortcut" destination="Pih-3x-GVt" id="Iea-FF-QtY"/>
                         <outlet property="playpauseShortcut" destination="Icl-ZR-dEH" id="8Ru-lN-s7w"/>
                         <outlet property="previousTrackShortcut" destination="F7S-Bw-Ukf" id="kFU-td-aRp"/>

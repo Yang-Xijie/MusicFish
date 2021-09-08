@@ -13,10 +13,14 @@ class MusicController {
     init() {
         MusicApplication = SBApplication(bundleIdentifier: "com.apple.Music")!
     }
+    
+    // MARK: - get
 
     var currentTrack: MusicTrack? {
         MusicApplication.currentTrack
     }
+    
+    // MARK: - manipulation
     
     func playpause() {
         let operationName = "playpause"
@@ -29,11 +33,11 @@ class MusicController {
            let trackAlbum = currentTrack.album?.description,
            let mp3url = (currentTrack as! MusicFileTrack).location
         {
-            if let trackCover = Self.getCover(filepath: mp3url) {
-                // 有封面
+            if let trackCover = Self.getCover(mp3path: mp3url) {
+                // with cover
                 PushNotificationWithNSImage(title: trackName, subtitle: "\(trackArtist) - \(trackAlbum)", body: operationName, nsimage: trackCover)
             } else {
-                // 无封面
+                // no cover
                 PushNotification(title: trackName, subtitle: "\(trackArtist) - \(trackAlbum)", body: operationName)
             }
         } else {
@@ -51,19 +55,23 @@ class MusicController {
         MusicApplication.previousTrack()
     }
     
-    // nil - no cover of current music
-    private static func getCover(filepath: URL) -> NSImage? {
-        let metadata = AVURLAsset(url: filepath).commonMetadata
+    // MARK: - private func
+    
+    /// Get the cover of the mp3 file.
+    ///
+    /// - Parameter mp3path: path of mp3 (currentTrack as! MusicFileTrack).location)
+    /// - Returns: nil - no cover for the given mp3
+    private static func getCover(mp3path: URL) -> NSImage? {
+        let metadata = AVURLAsset(url: mp3path).commonMetadata
         let artworkItems = AVMetadataItem.metadataItems(from: metadata, filteredByIdentifier: AVMetadataIdentifier.commonIdentifierArtwork)
 
-        if let artworkItem = artworkItems.first {
-            if let imageData = artworkItem.dataValue {
-                if let artwork = NSImage(data: imageData) {
-                    return artwork
-                }
-            }
+        if let artworkItem = artworkItems.first,
+           let imageData = artworkItem.dataValue,
+           let artwork = NSImage(data: imageData)
+        {
+            return artwork
         }
-        
+         
         return nil
     }
 }

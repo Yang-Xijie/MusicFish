@@ -40,12 +40,15 @@ struct Log: CustomStringConvertible {
         // medium: Specifies a medium style, typically with abbreviated text, such as “Nov 23, 1937” or “3:30:32 PM”.
         // long: Specifies a long style, typically with full text, such as “November 23, 1937” or “3:30:32 PM PST”.
         // full: Specifies a full style with complete details, such as “Tuesday, April 12, 1952 AD” or “3:30:42 PM Pacific Standard Time”.
-        formatter.dateStyle = .short
-
+        formatter.dateStyle = .none
         formatter.timeStyle = .short
         time_short = formatter.string(from: Date())
+
+        formatter.dateStyle = .none
         formatter.timeStyle = .medium
         time_medium = formatter.string(from: Date())
+
+        formatter.dateStyle = .short
         formatter.timeStyle = .long
         time_long = formatter.string(from: Date())
 
@@ -63,7 +66,7 @@ struct Log: CustomStringConvertible {
     }
 
     public var error: String {
-        "[ERROR] " + description
+        "[[ERROR]] " + description
     }
 
     public var fatalerror: String {

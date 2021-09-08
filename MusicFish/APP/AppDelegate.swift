@@ -8,17 +8,6 @@ import UserNotifications
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Debug
-//        if let currentTrack = MusicController.shared.MusicApplication.currentTrack {
-//            let artwork = (currentTrack.artworks!().firstObject as! MusicArtwork)
-//            
-//            print(type(of: artwork.data))
-//            print()
-//            print(artwork.objectDescription)
-////            PushNotification(title: "title", subtitle: "subtitle")
-//        } else {
-//            print(Log().error + "no currentTrack")
-//        }
-
         // Debug END
 
         // to send notifications on macOS
@@ -32,7 +21,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         KeyboardShortcuts.onKeyDown(for: .nextTrack) {
             MusicController.shared.nextTrack()
-//            print(Log().string + "onKeyDown nextTrack")
         }
 
         KeyboardShortcuts.onKeyDown(for: .previousTrack) {
@@ -46,7 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ aNotification: Notification) {}
 
-    func RequestNotificationCenterAuthorization() {
+    private func RequestNotificationCenterAuthorization() {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) { _, error in
             if let error = error {
