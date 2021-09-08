@@ -30,7 +30,7 @@ extension UNNotificationAttachment {
             let imageAttachment = try UNNotificationAttachment(identifier: imageFileIdentifier, url: fileURL, options: options)
             return imageAttachment
         } catch {
-            print("error " + error.localizedDescription)
+            print(Log().error + error.localizedDescription)
         }
         return nil
     }
@@ -42,16 +42,6 @@ func PushNotification(title: String, subtitle: String, body: String = "") {
     content.title = title
     content.subtitle = subtitle
     content.body = body
-//
-    ////    let nsimage = NSImage(data: Data(contentsOf: url))
-    ////    if let iconURL = Bundle.main.url(forResource: "MusicIcon", withExtension: nil) {
-//    let attachment = UNNotificationAttachment.create(identifier: "MusicIcon.png", image: nsimage, options: nil)
-//
-//    print(attachment?.type)
-//    print(attachment?.url)
-//
-//    content.attachments.append(attachment!)
-//
 
     // Create the request
     let uuidString = UUID().uuidString // TODO: not clear
@@ -64,6 +54,39 @@ func PushNotification(title: String, subtitle: String, body: String = "") {
     notificationCenter.add(request) { error in
         if error != nil {
             print(Log().error)
+        } else {
+            // Successfully
+            print(Log().string + "successfully pushed")
+        }
+    }
+}
+
+
+func PushNotificationWithNSImage(title: String, subtitle: String, body: String = "", nsimage: NSImage) {
+    // Create the notification and setup information
+    let content = UNMutableNotificationContent()
+    content.title = title
+    content.subtitle = subtitle
+    content.body = body
+
+    // identifier: If you specify an empty string, this method creates a unique identifier string for you.
+    if let attachment = UNNotificationAttachment.create(identifier: "image", image: nsimage, options: nil) {
+        content.attachments.append(attachment)
+        print(Log().string + "added attachment")
+    } else { return }
+
+    // Create the request
+
+    let request = UNNotificationRequest(
+        identifier: "",
+        content: content,
+        trigger: .none)
+
+    let notificationCenter = UNUserNotificationCenter.current()
+    notificationCenter.add(request) { error in
+        if error != nil {
+            print(Log().error + "\(error!)")
+            // https://developer.apple.com/documentation/usernotifications/unerror/2325676-attachmentmoveintodatastorefaile
         } else {
             // Successfully
             print(Log().string + "successfully pushed")

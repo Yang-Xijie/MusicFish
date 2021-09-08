@@ -26,9 +26,6 @@ class ControlPanelVC: NSViewController {
 //        TestImageView.image = getCover(filepath: URL(string: "/Users/yangxijie/yxj/MUSIC/iTunes/iTunes Media/Music/n-buna_GUMI/月を歩いている/2-01 花降らし AcousticPop Arrange..mp3")!)
         print(MusicController.shared.currentTrack)
         print((MusicController.shared.currentTrack! as! MusicFileTrack).location)
-        if let path = (MusicController.shared.currentTrack! as! MusicFileTrack).location {
-            TestImageView.image = getCover(filepath: path)
-        }
     }
 
     func getCover(filepath: URL) -> NSImage {
