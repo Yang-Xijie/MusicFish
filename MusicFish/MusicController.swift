@@ -61,13 +61,26 @@ class MusicController {
            let trackAlbum = currentTrack.album?.description,
            let mp3url = (currentTrack as! MusicFileTrack).location
         {
+            let title = "\(operationIcon) \(trackName)"
+            let subtitle: String
+            if trackArtist != "", trackAlbum != "" {
+                subtitle = "\(trackArtist) - \(trackAlbum)"
+            } else if trackArtist == "", trackAlbum == "" {
+                subtitle = ""
+            } else {
+                if trackArtist != "" {
+                    subtitle = trackArtist
+                } else {
+                    subtitle = trackAlbum
+                }
+            }
+            
             if let trackCover = Self.getCover(mp3path: mp3url) {
                 // with cover
-                PushNotificationWithNSImage(title: "\(operationIcon) \(trackName)", subtitle: "\(trackArtist) - \(trackAlbum)", nsimage: trackCover)
-                // FIXME: some track has no artist and album
+                PushNotificationWithNSImage(title: title, subtitle: subtitle, nsimage: trackCover)
             } else {
                 // no cover
-                PushNotification(title: "\(operationIcon) \(trackName)", subtitle: "\(trackArtist) - \(trackAlbum)", body: operationName)
+                PushNotification(title: title, subtitle: subtitle)
             }
         } else {
             print(Log().error + "no currentTrack")
