@@ -62,6 +62,15 @@
 			path = Notication;
 			sourceTree = "<group>";
 		};
+		488B25DD26E8F18A00B8130B /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				4894B05526E79662004BCDB6 /* Info.plist */,
+				4894B05626E79662004BCDB6 /* MusicFish.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
 		4894B04026E7965F004BCDB6 = {
 			isa = PBXGroup;
 			children = (
@@ -90,8 +99,7 @@
 				4894B06326E79853004BCDB6 /* ScriptingBridge */,
 				48C944D726E7BA13004A01E0 /* Assistant */,
 				4894B05026E79662004BCDB6 /* Assets.xcassets */,
-				4894B05526E79662004BCDB6 /* Info.plist */,
-				4894B05626E79662004BCDB6 /* MusicFish.entitlements */,
+				488B25DD26E8F18A00B8130B /* macOS */,
 			);
 			path = MusicFish;
 			sourceTree = "<group>";
@@ -353,12 +361,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MusicFish/MusicFish.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MusicFish/macOS/MusicFish.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = C4W6UUH267;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = MusicFish/Info.plist;
+				INFOPLIST_FILE = MusicFish/macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -374,12 +382,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MusicFish/MusicFish.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MusicFish/macOS/MusicFish.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = C4W6UUH267;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = MusicFish/Info.plist;
+				INFOPLIST_FILE = MusicFish/macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
