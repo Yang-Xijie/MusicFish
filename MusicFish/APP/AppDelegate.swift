@@ -43,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) { _, error in
             if let error = error {
-                print("[NotificationCenter.requestAuthorization] error - \(error)")
+                print(Log().error + error.localizedDescription)
             }
         }
     }

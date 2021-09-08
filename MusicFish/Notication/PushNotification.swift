@@ -22,7 +22,7 @@ func PushNotification(title: String, subtitle: String = "", body: String = "") {
             print(Log().error)
         } else {
             // Successfully
-            print(Log().string + "successfully pushed")
+//            print(Log().string + "successfully pushed")
         }
     }
 }
@@ -52,7 +52,7 @@ func PushNotificationWithNSImage(title: String, subtitle: String, body: String =
             print(Log().error + "\(error!)")
         } else {
             // Successfully
-            print(Log().string + "successfully pushed")
+//            print(Log().string + "successfully pushed")
         }
     }
 }

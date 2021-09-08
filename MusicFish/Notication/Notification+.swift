@@ -22,7 +22,7 @@ extension UNNotificationAttachment {
         let tmpSubFolderURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(tmpSubFolderName, isDirectory: true)
         do {
             try fileManager.createDirectory(at: tmpSubFolderURL, withIntermediateDirectories: true, attributes: nil)
-            print(Log().string + "\(tmpSubFolderURL)")
+//            print(Log().string + "\(tmpSubFolderURL)")
             let imageFileIdentifier: String
             if identifier == "" {
                 imageFileIdentifier = UUID().uuidString + ".png"
