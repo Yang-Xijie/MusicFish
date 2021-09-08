@@ -743,7 +743,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FEe-mX-PwD">
-                                <rect key="frame" x="22" y="127" width="406" height="46"/>
+                                <rect key="frame" x="22" y="194" width="406" height="46"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gnP-zI-MmL">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="46"/>
@@ -850,10 +850,87 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AHl-hS-niQ">
+                                <rect key="frame" x="91" y="108" width="268" height="46"/>
+                                <subviews>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X0G-J7-dM0">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="46"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YNq-GJ-wTx">
+                                                <rect key="frame" x="-2" y="30" width="134" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="􀊤" id="J8a-q2-F2v">
+                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="o0Y-Zi-cmZ" userLabel="previousTrack Shortcut">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="130" id="M2z-ta-95E"/>
+                                                    <constraint firstAttribute="height" constant="22" id="yxe-Jg-m6S"/>
+                                                </constraints>
+                                            </customView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="YNq-GJ-wTx" firstAttribute="centerX" secondItem="X0G-J7-dM0" secondAttribute="centerX" id="Tfm-YW-jf8"/>
+                                        </constraints>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eZw-jx-RTy">
+                                        <rect key="frame" x="138" y="0.0" width="130" height="46"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3w9-nU-TCd">
+                                                <rect key="frame" x="-2" y="30" width="134" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="􀊨" id="rKD-bW-N1v">
+                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="KDI-66-vdl" userLabel="playpause Shortcut">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="3gB-zx-Cnk"/>
+                                                    <constraint firstAttribute="width" constant="130" id="rok-rn-3lf"/>
+                                                </constraints>
+                                            </customView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="3w9-nU-TCd" firstAttribute="centerX" secondItem="eZw-jx-RTy" secondAttribute="centerX" id="WJG-bK-kZr"/>
+                                        </constraints>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="FEe-mX-PwD" firstAttribute="centerY" secondItem="8ux-ZW-rv2" secondAttribute="centerY" id="DJa-2T-gHh"/>
+                            <constraint firstItem="AHl-hS-niQ" firstAttribute="top" secondItem="FEe-mX-PwD" secondAttribute="bottom" constant="40" id="35Y-7a-dyP"/>
                             <constraint firstItem="FEe-mX-PwD" firstAttribute="centerX" secondItem="8ux-ZW-rv2" secondAttribute="centerX" id="Dd6-Ol-z5b"/>
+                            <constraint firstItem="AHl-hS-niQ" firstAttribute="centerX" secondItem="8ux-ZW-rv2" secondAttribute="centerX" id="Nh1-YP-bam"/>
+                            <constraint firstItem="FEe-mX-PwD" firstAttribute="top" secondItem="8ux-ZW-rv2" secondAttribute="top" constant="60" id="zOb-Of-jGz"/>
                         </constraints>
                     </view>
                     <connections>
