@@ -3,7 +3,7 @@
 import Cocoa
 import UserNotifications
 
-func PushNotification(title: String, subtitle: String, body: String = "") {
+func PushNotification(title: String, subtitle: String = "", body: String = "") {
     // Create the notification and setup information
     let content = UNMutableNotificationContent()
     content.title = title

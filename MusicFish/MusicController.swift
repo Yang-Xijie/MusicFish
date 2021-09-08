@@ -77,21 +77,33 @@ class MusicController {
     /// advance to the next track in the current playlist
     func nextTrack() {
         MusicApplication.nextTrack()
+        // no notification because Music.app has its own notification
+        // TODO: add a preference to let user close the notificatioins of Music.app and use the provided.
     }
     
     /// return to the previous track in the current playlist
     func previousTrack() {
         MusicApplication.previousTrack()
+        // no notification because Music.app has its own notification
+        // TODO: add a preference to let user close the notificatioins of Music.app and use the provided.
     }
     
     func volumeUp() {
         let newVolume: Int = ((soundVolume + 5) > 100) ? 100 : (soundVolume + 5)
         MusicApplication.setSoundVolume(newVolume)
+        
+        let volumeString: String = "􀊨 \(newVolume)%"
+        
+        PushNotification(title: volumeString)
     }
     
     func volumeDown() {
         let newVolume: Int = (soundVolume - 5 < 0) ? 0 : (soundVolume - 5)
         MusicApplication.setSoundVolume(newVolume)
+        
+        let volumeString: String = "􀊤 \(newVolume)%"
+        
+        PushNotification(title: volumeString)
     }
     
     // MARK: - private func
