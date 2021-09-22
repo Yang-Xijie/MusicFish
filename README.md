@@ -2,6 +2,8 @@
 
 An assistant app to control `Music.app` on `macOS 10.15 Catalina` and later.
 
+Mainly use `ScriptBridge`. However it is not always reliable. So I decided to **stop maintain** for this project.
+
 ## Referenced Open Source Projects
 
 [KeyboardShortcuts](https://github.com/sindresorhus/KeyboardShortcuts) - [LICENSE](https://github.com/sindresorhus/KeyboardShortcuts/blob/main/license)
