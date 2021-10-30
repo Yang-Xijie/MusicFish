@@ -46,9 +46,9 @@ class MusicController {
     }
 
     enum TrackLoveState: String {
-        case noEvaluation = "􀊴"
-        case loved = "􀊵"
-        case disliked = "􀊷"
+        case noEvaluation = "😶"
+        case loved = "☺️"
+        case disliked = "😑"
     }
 
     // MARK: - manipulation Control
@@ -58,21 +58,22 @@ class MusicController {
         // TODO: consider when music is not activate: use NSRunningApplication to start Music.app
         MusicApplication.playpause()
         
-        let operationName: String
+//        let operationName: String
         let operationIcon: String
         switch playerState {
         case .stopped:
-            operationName = "stopped"
-            operationIcon = "􀛷"
+//            operationName = "stopped"
+            operationIcon = "⏹"
         case .paused:
-            operationName = "paused"
-            operationIcon = "􀊆"
+//            operationName = "paused"
+            operationIcon = "⏸"
         case .playing:
-            operationName = "playing"
-            operationIcon = "􀊄"
+//            operationName = "playing"
+            operationIcon = "▶️"
+            
         default:
-            operationName = "playpause"
-            operationIcon = "􀊈"
+//            operationName = "playpause"
+            operationIcon = "⏯"
         }
         
         if let currentTrack = MusicApplication.currentTrack,
@@ -81,7 +82,7 @@ class MusicController {
            let trackAlbum = currentTrack.album?.description,
            let mp3url = (currentTrack as! MusicFileTrack).location
         {
-            let title = "\(operationIcon) \(trackName)"
+            let title = "\(operationIcon)  \(trackName)"
             let subtitle: String
             if trackArtist != "", trackAlbum != "" {
                 subtitle = "\(trackArtist) - \(trackAlbum)"
@@ -122,19 +123,19 @@ class MusicController {
     }
     
     func volumeUp() {
-        let newVolume: Int = ((soundVolume + 5) > 100) ? 100 : (soundVolume + 5)
+        let newVolume: Int = ((soundVolume + 5) > 100) ? 100 : Int((soundVolume + 5)/5)*5
         MusicApplication.setSoundVolume(newVolume)
         
-        let volumeString: String = "􀊩 \(newVolume)%"
+        let volumeString: String = "↑ volume \(newVolume)%"
         
         PushNotification(title: volumeString)
     }
     
     func volumeDown() {
-        let newVolume: Int = (soundVolume - 5 < 0) ? 0 : (soundVolume - 5)
+        let newVolume: Int = (soundVolume - 5 < 0) ? 0 : Int((soundVolume - 5)/5)*5
         MusicApplication.setSoundVolume(newVolume)
         
-        let volumeString: String = "􀊥 \(newVolume)%"
+        let volumeString: String = "↓ volume \(newVolume)%"
         
         PushNotification(title: volumeString)
     }
@@ -150,7 +151,7 @@ class MusicController {
         {
             let originalLoveState: TrackLoveState = trackLoveState!
             
-            let title = "\(originalLoveState.rawValue) 􀰑 \(newLoveState.rawValue) \(trackName)"
+            let title = "\(originalLoveState.rawValue) → \(newLoveState.rawValue)  \(trackName)"
             let subtitle: String
             if trackArtist != "", trackAlbum != "" {
                 subtitle = "\(trackArtist) - \(trackAlbum)"
