@@ -55,13 +55,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		488B25DB26E8DB2100B8130B /* Notication */ = {
+		488B25DB26E8DB2100B8130B /* Notification */ = {
 			isa = PBXGroup;
 			children = (
 				4892129526E8975200A82340 /* PushNotification.swift */,
 				488B25D926E8DAAC00B8130B /* Notification+.swift */,
 			);
-			path = Notication;
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		488B25DD26E8F18A00B8130B /* macOS */ = {
@@ -77,7 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				4894B04B26E7965F004BCDB6 /* MusicFish */,
-				4894B05E26E7977A004BCDB6 /* doc */,
+				4894B05E26E7977A004BCDB6 /* docs */,
 				48C944CB26E7ACE8004A01E0 /* README.md */,
 				4894B04A26E7965F004BCDB6 /* Products */,
 			);
@@ -97,7 +97,7 @@
 				4894B06426E79922004BCDB6 /* MusicController.swift */,
 				48C944D026E7B318004A01E0 /* KeyboardShortcuts+.swift */,
 				48C944D426E7B46C004A01E0 /* APP */,
-				488B25DB26E8DB2100B8130B /* Notication */,
+				488B25DB26E8DB2100B8130B /* Notification */,
 				4894B06326E79853004BCDB6 /* ScriptingBridge */,
 				48C944D726E7BA13004A01E0 /* Assistant */,
 				4894B05026E79662004BCDB6 /* Assets.xcassets */,
@@ -106,13 +106,13 @@
 			path = MusicFish;
 			sourceTree = "<group>";
 		};
-		4894B05E26E7977A004BCDB6 /* doc */ = {
+		4894B05E26E7977A004BCDB6 /* docs */ = {
 			isa = PBXGroup;
 			children = (
 				4894B05C26E79766004BCDB6 /* SwiftScriptingBridge.md */,
 				488B25DC26E8EB2800B8130B /* TODO.md */,
 			);
-			path = doc;
+			path = docs;
 			sourceTree = "<group>";
 		};
 		4894B06326E79853004BCDB6 /* ScriptingBridge */ = {
